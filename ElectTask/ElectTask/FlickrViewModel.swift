@@ -1,35 +1,47 @@
 import Foundation
-import SwiftUI
 import Combine
 
 class FlickrViewModel: ObservableObject {
 
-    @Published var searchText: String = "Electrolux"
+    @Published var searchText: String = String()
     @Published var searching = false
     @Published var flickrPhotos: [photos] = []
+
+    var subscription: Set<AnyCancellable> = []
 
     let api_key = "83ca7e7a5ce1477cd0ed83d2820145c0"
     let method = "flickr.photos.search"
     var flickrURLString: String = "http://www.flickr.com"
 
-    private let session: URLSession
-    private var cancelable: AnyCancellable?
-    private static let sessionProcessingQueue = DispatchQueue(label: "SessionProcessingQueue")
+    private static let sessionQueue = DispatchQueue(label: "SessionQueue")
 
-    init(session: URLSession = .shared) {
-        self.session = session
-
-        flickrURLString = "https://www.flickr.com/services/rest/?method=\(self.method)&api_key=\(self.api_key)&tags=\(self.searchText)&extras=url_sq&per_page=21&page=1&format=json&nojsoncallback=1"
-        fetch()
+    init() {
+        $searchText
+        .debounce(for: .milliseconds(800), scheduler: RunLoop.main)
+        .map({ (string) -> String? in
+            if string.count < 1 {
+                self.flickrPhotos = []
+                return nil
+            }
+            return string
+        })
+        .compactMap{ $0 }
+        .sink { (_) in
+        } receiveValue: { [self] (searchField) in
+            fetch()
+        }.store(in: &subscription)
     }
 
     private func fetch() {
+        print("maybe search change")
+        print(searchText)
+        flickrURLString = "https://www.flickr.com/services/rest/?method=\(self.method)&api_key=\(self.api_key)&tags=\(self.searchText)&extras=url_sq&per_page=21&page=1&format=json&nojsoncallback=1"
         guard let url = URL(string: flickrURLString) else {
             return
         }
 
         URLSession.shared.dataTaskPublisher(for: url)
-        .subscribe(on: Self.sessionProcessingQueue)
+        .subscribe(on: Self.sessionQueue)
         .map({
             return $0.data
         })
@@ -44,8 +56,8 @@ class FlickrViewModel: ObservableObject {
               print(error)
             }
         }, receiveValue: { [weak self] (flickrObject) in
-            self?.flickrPhotos.append(contentsOf: flickrObject.photos.photo)
-        })
+            self?.flickrPhotos = flickrObject.photos.photo
+        }).store(in: &subscription)
     }
 
 }
