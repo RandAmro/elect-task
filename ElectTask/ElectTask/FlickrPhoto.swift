@@ -15,4 +15,5 @@ struct photos: Codable {
     let id: String
     let title: String
     let url_sq: String
+    let url_n: String
 }

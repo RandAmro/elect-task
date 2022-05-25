@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7BE641A283EB2E000B14201 /* FlickrPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BE6419283EB2E000B14201 /* FlickrPhotoView.swift */; };
 		C7F14652283A7A8B000B65BC /* ElectTaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F14651283A7A8B000B65BC /* ElectTaskApp.swift */; };
 		C7F14656283A7A8E000B65BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7F14655283A7A8E000B65BC /* Assets.xcassets */; };
 		C7F14659283A7A8E000B65BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7F14658283A7A8E000B65BC /* Preview Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C7BE6419283EB2E000B14201 /* FlickrPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoView.swift; sourceTree = "<group>"; };
 		C7F1464E283A7A8B000B65BC /* ElectTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElectTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7F14651283A7A8B000B65BC /* ElectTaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectTaskApp.swift; sourceTree = "<group>"; };
 		C7F14655283A7A8E000B65BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				C7F14660283AA4D1000B65BC /* FlickrMainView.swift */,
 				C7F14666283AAC40000B65BC /* FlickerSearchBarView.swift */,
 				C7F14668283AACF9000B65BC /* FlickrPhotosGridView.swift */,
+				C7BE6419283EB2E000B14201 /* FlickrPhotoView.swift */,
 				C7F14664283AA5B8000B65BC /* FlickrViewModel.swift */,
 				C7F1466A283AC041000B65BC /* FlickrPhoto.swift */,
 				C7F14651283A7A8B000B65BC /* ElectTaskApp.swift */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7BE641A283EB2E000B14201 /* FlickrPhotoView.swift in Sources */,
 				C7F14652283A7A8B000B65BC /* ElectTaskApp.swift in Sources */,
 				C7F1466B283AC041000B65BC /* FlickrPhoto.swift in Sources */,
 				C7F14665283AA5B8000B65BC /* FlickrViewModel.swift in Sources */,
@@ -285,6 +289,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ElectTask/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This will save the picture on your phone!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -313,6 +318,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ElectTask/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This will save the picture on your phone!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

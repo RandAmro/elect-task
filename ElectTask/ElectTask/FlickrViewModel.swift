@@ -3,9 +3,10 @@ import Combine
 
 class FlickrViewModel: ObservableObject {
 
-    @Published var searchText: String = String()
+    @Published var searchText: String = "Electrolux"
     @Published var searching = false
     @Published var flickrPhotos: [photos] = []
+    @Published var selectedPhoto: String = String()
 
     var subscription: Set<AnyCancellable> = []
 
@@ -35,7 +36,7 @@ class FlickrViewModel: ObservableObject {
     private func fetch() {
         print("maybe search change")
         print(searchText)
-        flickrURLString = "https://www.flickr.com/services/rest/?method=\(self.method)&api_key=\(self.api_key)&tags=\(self.searchText)&extras=url_sq&per_page=21&page=1&format=json&nojsoncallback=1"
+        flickrURLString = "https://www.flickr.com/services/rest/?method=\(self.method)&api_key=\(self.api_key)&tags=\(self.searchText)&extras=url_sq,url_n&per_page=21&page=1&format=json&nojsoncallback=1&media=photos"
         guard let url = URL(string: flickrURLString) else {
             return
         }
