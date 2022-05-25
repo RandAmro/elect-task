@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct FlickerSearchBarView: View {
-    @Binding var searchText: String
-    @Binding var searching: Bool
+    @ObservedObject var viewModel: FlickrViewModel
 
     var body: some View {
         ZStack {
@@ -10,15 +9,15 @@ struct FlickerSearchBarView: View {
                 .foregroundColor(Color("LightGray"))
             HStack {
                 Image(systemName: "magnifyingglass")
-                TextField("Search ..", text: $searchText) { startedEditing in
+                TextField("Search ..", text: $viewModel.searchText) { startedEditing in
                     if startedEditing {
                         withAnimation {
-                            searching = true
+                            viewModel.searching = true
                         }
                     }
                 } onCommit: {
                     withAnimation {
-                        searching = false
+                        viewModel.searching = false
                     }
                 }
             }
@@ -33,6 +32,6 @@ struct FlickerSearchBarView: View {
 
 struct FlickerSearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        FlickerSearchBarView(searchText: .constant("Electrolux"), searching: .constant(false))
+        FlickerSearchBarView(viewModel: FlickrViewModel())
     }
 }

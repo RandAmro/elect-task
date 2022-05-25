@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FlickrPhotosGridView: View {
-    private var flickrPhotos = [FlickrPhoto]()
+    @ObservedObject var viewModel: FlickrViewModel
 
     let columns = [
        GridItem(.adaptive(minimum: 120)),
@@ -12,9 +12,8 @@ struct FlickrPhotosGridView: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 8) {
-                ForEach(flickrPhotos) { item in
-                    Image(systemName: "\(item.id).circle.fill")
-                        .font(.largeTitle)
+                ForEach(viewModel.flickrPhotos,  id: \.id) { item in
+                    AsyncImage(url: URL(string: item.url_sq))
                 }
             }
             .padding(.horizontal)
@@ -24,6 +23,6 @@ struct FlickrPhotosGridView: View {
 
 struct FlickrPhotosGridView_Previews: PreviewProvider {
     static var previews: some View {
-        FlickrPhotosGridView()
+        FlickrPhotosGridView(viewModel: FlickrViewModel())
     }
 }

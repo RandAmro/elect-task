@@ -1,14 +1,18 @@
 import SwiftUI
 
-struct FlickrPhoto: Decodable, Identifiable {
-    var id: Int
-    var title: String
-    var url_sq: String
-    var media: String
+struct FlickrObject: Codable {
+    let photos: FlickrPhotos
+}
 
-    //var photo: CGImage?
+struct FlickrPhotos: Codable {
+    let page: Int
+    let pages: Int
+    let total: Double
+    let photo: [photos]
+}
 
-    enum CodingKeys: String, CodingKey {
-        case id, title, url_sq, media
-    }
+struct photos: Codable {
+    let id: String
+    let title: String
+    let url_sq: String
 }

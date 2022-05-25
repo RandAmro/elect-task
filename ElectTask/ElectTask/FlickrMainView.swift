@@ -1,23 +1,22 @@
 import SwiftUI
 
 struct FlickrMainView: View {
-    @State var searchText = "Electrolux"
-    @State var searching = false
+    @ObservedObject var viewModel: FlickrViewModel
 
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 8) {
-                FlickerSearchBarView(searchText: $searchText, searching: $searching)
-                FlickrPhotosGridView()
+                FlickerSearchBarView(viewModel: viewModel)
+                FlickrPhotosGridView(viewModel: viewModel)
                 .navigationTitle("Flickrs Photos")
                 .navigationBarTitleDisplayMode(.inline)
             }
             .toolbar {
-                if searching {
+                if viewModel.searching {
                     Button("Cancel") {
-                        searchText = ""
+                        viewModel.searchText = ""
                         withAnimation {
-                           searching = false
+                            viewModel.searching = false
                            UIApplication.shared.dismissKeyboard()
                         }
                     }
@@ -40,6 +39,6 @@ extension UIApplication {
 
 struct FlickrMainView_Previews: PreviewProvider {
     static var previews: some View {
-        FlickrMainView()
+        FlickrMainView(viewModel: FlickrViewModel())
     }
 }
