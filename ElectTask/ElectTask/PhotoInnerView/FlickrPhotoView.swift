@@ -6,8 +6,6 @@ struct FlickrPhotoView: View {
 
     var body: some View {
         VStack {
-            Text(viewModel.selectedPhoto)
-
             AsyncImage(url: URL(string: viewModel.selectedPhoto)) { phase in
                 switch phase {
                 case .empty:
@@ -29,8 +27,17 @@ struct FlickrPhotoView: View {
             .frame(width: 300, height: 300)
             .cornerRadius(20)
 
-            Button("Save to image") {
+            Button(action: {
                 UIImageWriteToSavedPhotosAlbum(snapshot, nil, nil, nil)
+            }) {
+                Text("Save to image")
+                    .foregroundColor(.blue)
+                    .padding([.leading, .trailing], 16)
+                    .padding([.top, .bottom], 8)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 4)
+                            .stroke(.blue, lineWidth: 2)
+                    )
             }
         }
     }

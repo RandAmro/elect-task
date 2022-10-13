@@ -116,5 +116,133 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B1241D5F-3392-49A4-B6A1-F28DD7D1BC52"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElectTask/FlickrViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1"
+            endingLineNumber = "1"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EBD19F87-4403-4CFD-934E-84FDCC54F8F0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElectTask/FlickrPhotoView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2"
+            endingLineNumber = "2"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "31D08AB9-6887-496A-B4D6-C804C236541F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElectTask/APIServices.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "APIServices"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "31D08AB9-6887-496A-B4D6-C804C236541F - cfb2d6f816532eda"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "one-time initialization function for sessionQueue"
+                  moduleName = "ElectTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ranamr/Documents/GitHub/elect-task/ElectTask/ElectTask/APIServices.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "31D08AB9-6887-496A-B4D6-C804C236541F - 46039712683fd744"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElectTask.APIServices.sessionQueue.unsafeMutableAddressor : __C.OS_dispatch_queue"
+                  moduleName = "ElectTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ranamr/Documents/GitHub/elect-task/ElectTask/ElectTask/APIServices.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFA5FC26-0987-4F89-BFF6-57E727D97CAB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElectTask/APIServices.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "5"
+            endingLineNumber = "5"
+            landmarkName = "APIServices"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "BFA5FC26-0987-4F89-BFF6-57E727D97CAB - 581eb72973665ec5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "one-time initialization function for shared"
+                  moduleName = "ElectTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ranamr/Documents/GitHub/elect-task/ElectTask/ElectTask/APIServices.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "5"
+                  endingLineNumber = "5"
+                  offsetFromSymbolStart = "7">
+               </Location>
+               <Location
+                  uuid = "BFA5FC26-0987-4F89-BFF6-57E727D97CAB - 9fc4bc11fb0ce733"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElectTask.APIServices.shared.unsafeMutableAddressor : ElectTask.APIServices"
+                  moduleName = "ElectTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ranamr/Documents/GitHub/elect-task/ElectTask/ElectTask/APIServices.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "5"
+                  endingLineNumber = "5"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
